@@ -1,12 +1,22 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Table from 'react-bootstrap/Table';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Button from 'react-bootstrap/Button';
 import Axios from "axios"
 
 
 function App() {
 
   const [dataAnimals, setDataAnimals] = useState([])
+  const [search, setSearch] = useState("")
 
+  const filteredAnimals = dataAnimals.filter((type) => type.animal_type.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+
+  useEffect(() =>{
+    getDataApi()
+
+  }, [])
 
   const getDataApi = () => {
     // fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
@@ -29,6 +39,17 @@ function App() {
     <div 
       className="flex flex-col justify-center p-10"
     >
+      <InputGroup className="mb-3">
+        <Form.Control
+          placeholder="Narrow by type"
+          value={search}
+          onChange={(e) => {setSearch(e.target.value)}}
+          
+        />
+        <Button variant="outline-secondary" id="button-addon2">
+          Button
+        </Button>
+      </InputGroup>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -40,7 +61,7 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {dataAnimals.map((animal) => (
+          {filteredAnimals.map((animal) => (
             <tr key={animal.id}>
              <td >
               {animal.id}
