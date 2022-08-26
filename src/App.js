@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Axios from "axios"
 
 
 function App() {
@@ -6,13 +7,18 @@ function App() {
   const [dataAnimals, setDataAnimals] = useState({})
 
 
-  const getDataApi = async () => {
-    fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
-    .then((res) => res.json())
-    .then((data) => {
-      setDataAnimals(data)
-      console.log(data)
+  const getDataApi = () => {
+    // fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
+    // .then((res) => res.json())
+    // .then((data) => {
+    //   setDataAnimals(data)
+    //   console.log(data)
 
+    // })
+    Axios.get("https://zoo-animal-api.herokuapp.com/animals/rand")
+    .then((res) =>{
+      setDataAnimals(res.data)
+      console.log(res.data)
     })
   }
 
