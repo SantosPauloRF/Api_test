@@ -40,14 +40,16 @@ function Home() {
     })
   }
 
-  const singleAnimal = (id, name, diet, type, time) => {
+  const singleAnimal = (id, name, diet, type, time, image, habitat) => {
 
     setState({
         id: id,
         active_time: time,
         animal_type: type,
         diet: diet,
-        name: name
+        name: name,
+        image_link:image,
+        habitat: habitat
     })
 
     navigate(`/${id}`)
@@ -88,7 +90,7 @@ function Home() {
           </tr>
         </thead>
         <tbody>
-          {filteredAnimals.map((animal) => (
+        {filteredAnimals.map((animal) => (
             <tr key={animal.id}>
              <td >
               {animal.id}
@@ -109,7 +111,7 @@ function Home() {
               <GiClick 
                 className='cursor-pointer'
                 size={30}
-                onClick={() => singleAnimal(animal.id, animal.name, animal.diet, animal.animal_type, animal.active_time)}
+                onClick={() => singleAnimal(animal.id, animal.name, animal.diet, animal.animal_type, animal.active_time, animal.image_link, animal.habitat)}
               />
              </td> 
             </tr>

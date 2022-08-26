@@ -1,47 +1,43 @@
 import React, { useContext } from 'react'
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Table from 'react-bootstrap/Table';
+import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 import { animalContext } from "./Context"
 
 function SingleAnimal() {
+    
+    const navigate = useNavigate()
 
     const { state } = useContext(animalContext)
-    
-  return (
-    <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Animal Name</th>
-            <th>Diet</th>
-            <th>Type</th>
-            <th>Time</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr key={state.id}>
-             <td >
-              {state.id}
-             </td> 
-             <td >
-              {state.name}
-             </td> 
-             <td >
-              {state.diet}
-             </td> 
-             <td >
-              {state.animal_type}
-             </td> 
-             <td >
-              {state.active_time}
-             </td> 
-             
-            </tr>
-          
 
-        </tbody>
-      </Table>
+  return (
+    <div 
+      className="flex justify-center p-10"
+      >
+      <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={state.image_link} />
+      <Card.Body>
+        <Card.Title>{state.name}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{state.animal_type}</Card.Subtitle>
+        </Card.Body>  
+        <ListGroup className="list-group-flush">
+          <ListGroup.Item><span className='font-bold text-blue-700'>Active: </span>{state.active_time}</ListGroup.Item>
+          <ListGroup.Item><span className='font-bold text-blue-700'>Diet: </span>{state.diet}</ListGroup.Item>
+          <ListGroup.Item><span className='font-bold text-blue-700'>Habitat: </span>{state.habitat}</ListGroup.Item>
+      </ListGroup>
+      
+      <Card.Body>
+        <Button 
+          variant="primary"
+          onClick={() => navigate("/")}
+        >
+          Back
+        </Button>
+      </Card.Body>
+    </Card>
+    </div>
   )
 }
 
