@@ -16,6 +16,7 @@ function Home() {
   const [search, setSearch] = useState("")
   const { setState } = useContext(animalContext)
   const navigate = useNavigate()
+  const [searchNumber, setSearchNumber] = useState(10)
 
   const filteredAnimals = dataAnimals.filter((type) => type.animal_type.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
 
@@ -33,13 +34,19 @@ function Home() {
     //   console.log(data)
 
     // })
-    Axios.get("https://zoo-animal-api.herokuapp.com/animals/rand/10")
-    .then((res) =>{
-      setDataAnimals(res.data)
-
-    })
+    if (searchNumber <= 0 || searchNumber >10){
+        return alert("Just numbers between 1 to 10 allowed")
+        
+    } else {
+        
+        Axios.get(`https://zoo-animal-api.herokuapp.com/animals/rand/${searchNumber}`)
+        .then((res) =>{
+          setDataAnimals(res.data)
+    
+        })
+    }
   }
-
+  
   const singleAnimal = (id, name, diet, type, time, image, habitat) => {
 
     setState({
@@ -66,14 +73,22 @@ function Home() {
       >
         <InputGroup className="mb-3">
         <Form.Control
+          placeholder="Choose how many animals to show {1 to 10} "
+          onChange={(e) => setSearchNumber(e.target.value)}
+          
+        />
+        <Button variant="outline-secondary" id="button-addon2" onClick={() => getDataApi()}>
+          Button
+        </Button>
+      </InputGroup>
+        <InputGroup className="mb-3">
+        <Form.Control
           placeholder="Narrow by type"
           value={search}
           onChange={(e) => {setSearch(e.target.value)}}
           
         />
-        <Button variant="outline-secondary" id="button-addon2">
-          Button
-        </Button>
+        
       </InputGroup>
       
 

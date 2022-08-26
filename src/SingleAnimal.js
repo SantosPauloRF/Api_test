@@ -7,7 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { animalContext } from "./Context"
 
 function SingleAnimal() {
-    
+
     const navigate = useNavigate()
 
     const { state } = useContext(animalContext)
