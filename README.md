@@ -4,8 +4,10 @@
     * **Nome**: Paulo Rafael Faria dos Santos
     * **Email**: santos.paulo.rf@gmail.com
     * **Whatsapp**: (11) 98107-4873 
+    
 <br />
 <br />
+
 * Stack:
   * React.js
   * Tailwind css
@@ -13,20 +15,27 @@
   * React Router Dom
   * Axios
   * Firebase Hosting
+
 <br />
 <br />
+
 * Api usada: https://zoo-animal-api.herokuapp.com/
     * Api que retorna informaçoes aleatórias sobre animais de zoologico
+
 <br />
 <br />
+
 * Tarefas:
   *[x] Decidit uma api
   *[x] Criar página simples
   *[x] Consumir a api
   *[x] Apresentar os dados em uma tabela de forma dinâmica
+
 <br />
 <br />  
+
 * Exercício em produçao: https://api-move-test.web.app/  
+
 <br />
 <br />
 
@@ -43,6 +52,7 @@
 por se tratar de uma aplicação bem pequena onde todos os componentes acabam ja renderizando, foi uma solução **pertinente**.
     * A solução ideal para armazenar estados globais seria ferramentas como **Redux** ou **Zustand** ou até mesmo lidar com os estados da resposta da api na "*data*" do **react Query**
 * Não apresentei **paginação** pois minha api retorna no máximo 10 resultados e paginar apenas eles iria comprometer a **UX** de utilizar o campo de busca para refinar os resultados.
+
 <br />
 <br />
 
