@@ -27,6 +27,13 @@
   * [x] Criar página simples
   * [x] Consumir a api
   * [x] Apresentar os dados em uma tabela de forma dinâmica
+  
+<br />
+
+* Pontos extras:
+  * [x] Consulta personalisada dos resultados apresentados da api
+  * [x] Filtragem de dados
+  * [x] Valores individuais na tabela
 
 <br />
 
