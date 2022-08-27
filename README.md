@@ -6,7 +6,7 @@
     * **Whatsapp**: (11) 98107-4873 
 <br />
 <br />
-* Stack
+* Stack:
   * React.js
   * Tailwind css
   * Bootstrap5
@@ -19,11 +19,11 @@
     * Api que retorna informaçoes aleatórias sobre animais de zoologico
 <br />
 <br />
-* Tarefas
-  * [x] Decidit uma api
-  * [x] Criar página simples
-  * [x] Consumir a api
-  * [x] Apresentar os dados em uma tabela de forma dinâmica
+* Tarefas:
+  *[x] Decidit uma api
+  *[x] Criar página simples
+  *[x] Consumir a api
+  *[x] Apresentar os dados em uma tabela de forma dinâmica
 <br />
 <br />  
 * Exercício em produçao: https://api-move-test.web.app/  
