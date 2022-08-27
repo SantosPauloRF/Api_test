@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Teste de estágio front-end Move
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Dados:
+    * **Nome**: Paulo Rafael Faria dos Santos
+    * **Email**: santos.paulo.rf@gmail.com
+    * **Whatsapp**: (11) 98107-4873 
+<br />
+<br />
+* Stack
+  * React.js
+  * Tailwind css
+  * Bootstrap5
+  * React Router Dom
+  * Axios
+  * Firebase Hosting
+<br />
+<br />
+* Api usada: https://zoo-animal-api.herokuapp.com/
+    * Api que retorna informaçoes aleatórias sobre animais de zoologico
+<br />
+<br />
+* Tarefas
+  * [x] Decidit uma api
+  * [x] Criar página simples
+  * [x] Consumir a api
+  * [x] Apresentar os dados em uma tabela de forma dinâmica
+<br />
+<br />  
+* Exercício em produçao: https://api-move-test.web.app/  
+<br />
+<br />
 
-## Available Scripts
+# Explicações
 
-In the project directory, you can run:
+* Fiz o **commit** de cada passo da construção do projeto para poderem avaliar.
+* Comecei utilizando **fetch api** para buscar informação.
+* Mudei para **axios** por ser uma lib mais moderna e facil de se trabalhar. (*e por ser também bastante utilizada no mercado*)
+    * Tenho conhecimento de que se utilizar **axios** dentro do **useEffect** não é a solução recomendada pelos docs do React ( *apesar de ser uma solução muito utilizada no mercado* ) e o ideal seria utilizar uma lib propria para comunicação com api como **React-Query** ( *Tanstack/reactquery* ). 
+* Todos meus commits estão em **inglês** pois acho mais facil de pensar assim quando estou programando ( *não é show off, eu prometo* ).
+* Quis colocar uma **página especial** para apresentar os dados de um animal só, porem a minha api não tem endpoint com a **query de id**.
+* Solucionei este problema com a **context api** criando estados globais e passando para a página de mostra individual do animal.
+    * Sei que context api não é a solução mais **recomendada** para controlar estados globais por conta de sempre renderizar todos os estados compartilhados, porem
+por se tratar de uma aplicação bem pequena onde todos os componentes acabam ja renderizando, foi uma solução **pertinente**.
+    * A solução ideal para armazenar estados globais seria ferramentas como **Redux** ou **Zustand** ou até mesmo lidar com os estados da resposta da api na "*data*" do **react Query**
+* Não apresentei **paginação** pois minha api retorna no máximo 10 resultados e paginar apenas eles iria comprometer a **UX** de utilizar o campo de busca para refinar os resultados.
+<br />
+<br />
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Estou a disposição para esclarecer quaisquer dúvidas sobre este projeto =)
